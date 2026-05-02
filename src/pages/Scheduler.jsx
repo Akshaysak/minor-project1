@@ -233,12 +233,12 @@ function Scheduler() {
           <motion.button 
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            style={{ ...styles.generateBtn, background: 'linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%)' }} 
+            style={{ ...styles.generateBtn, background: 'linear-gradient(135deg, #7b4dff 0%, #a66cff 100%)' }} 
             onClick={generateAiSchedule}
             disabled={isAiLoading}
           >
-            <Wand2 size={20} style={{marginRight: 8}} className={isAiLoading ? "animate-bounce" : ""}/>
-            {isAiLoading ? "Thinking..." : "AI Magic"}
+            <Wand2 size={20} style={{marginRight: 8}} className={isAiLoading ? "animate-pulse" : ""}/>
+            {isAiLoading ? "Optimizing..." : "Smart Optimize"}
           </motion.button>
         </div>
 

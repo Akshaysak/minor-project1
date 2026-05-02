@@ -311,7 +311,7 @@ function Home() {
           <div style={{...styles.cardHeader, justifyContent: 'space-between'}}>
             <div style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
               <Lightbulb size={20} color="#fff" />
-              <h3 style={{...styles.cardTitle, color: '#fff'}}>Sloth Wisdom (AI)</h3>
+              <h3 style={{...styles.cardTitle, color: '#fff'}}>Daily Insight</h3>
             </div>
             <motion.button 
               whileHover={{ rotate: 180 }}
@@ -323,7 +323,7 @@ function Home() {
             </motion.button>
           </div>
           <p style={styles.tipText}>
-            {loadingTip ? "Channeling the internal sloth..." : `"${tip}"`}
+            {loadingTip ? "Consulting behavior patterns..." : `"${tip}"`}
           </p>
         </motion.div>
       </motion.div>
