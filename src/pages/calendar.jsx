@@ -44,7 +44,7 @@ function Calendar() {
 
   return (
     <div style={styles.container} className="no-scrollbar">
-      <TopBar title="Laziness Log" />
+      <TopBar title="Lazy Log" />
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

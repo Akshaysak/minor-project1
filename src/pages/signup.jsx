@@ -23,9 +23,9 @@ function Signup() {
         animate={{ opacity: 1, scale: 1 }}
         style={styles.card}
       >
-        <h2 style={styles.heading}>Start Small</h2>
+        <h2 style={styles.heading}>Get Started</h2>
         <p style={styles.subtext}>
-          Join thousands of smart sloths planning better.
+          Join the ecosystem designed for intentional productivity.
         </p>
 
         <div style={styles.inputWrapper}>
@@ -72,9 +72,9 @@ function Signup() {
         </motion.button>
 
         <p style={styles.footer}>
-          Already a pro sloth?{" "}
+          Already have an account?{" "}
           <span style={styles.link} onClick={() => navigate("/login")}>
-            Sign In here
+            Sign In
           </span>
         </p>
       </motion.div>

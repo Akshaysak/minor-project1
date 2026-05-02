@@ -17,7 +17,7 @@ function Scheduler() {
   // ... rest of component
   const generateAiSchedule = async () => {
     if (tasks.length === 0) {
-      alert("Add some tasks first so the AI can balance them!");
+      alert("Add some objectives to begin the optimization process.");
       return;
     }
     setIsAiLoading(true);
@@ -26,7 +26,7 @@ function Scheduler() {
       setGenerated(aiSchedule);
       localStorage.setItem("schedule", JSON.stringify(aiSchedule));
     } else {
-      alert("AI was too lazy to respond. Try the manual generator!");
+      alert("Consultation timed out. Please try the manual generator.");
     }
     setIsAiLoading(false);
   };
@@ -119,7 +119,7 @@ function Scheduler() {
 
   return (
     <div style={styles.container}>
-      <TopBar title="Laziness Mode" />
+      <TopBar title="Lazy Mode" />
       
       <motion.div 
         initial={{ opacity: 0, y: 10 }}
@@ -227,7 +227,7 @@ function Scheduler() {
             disabled={isAiLoading}
           >
             <Sparkles size={20} style={{marginRight: 8}}/>
-            Manual
+            Sequence Schedule
           </motion.button>
 
           <motion.button 

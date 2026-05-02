@@ -21,7 +21,7 @@ function Splash() {
           transition={{ delay: 0.3 }}
           style={styles.title}
         >
-          Laziness <span style={styles.titleAccent}>Planner</span>
+          Lazy <span style={styles.titleAccent}>Planner</span>
         </motion.h1>
 
         <motion.p 
@@ -30,7 +30,7 @@ function Splash() {
           transition={{ delay: 0.5 }}
           style={styles.subtitle}
         >
-          Productivity without the stress. Plan your day with guilt-free breaks and sloth-like pacing.
+          Intentional productivity. Maximize focus by integrating strategic rest intervals and cognitive load balancing.
         </motion.p>
 
         <motion.div 
@@ -45,7 +45,7 @@ function Splash() {
             style={styles.signupBtn} 
             onClick={() => navigate("/signup")}
           >
-            Join the Sloths
+            Get Started
           </motion.button>
 
           <motion.button 

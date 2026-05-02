@@ -32,7 +32,7 @@ function Task() {
 
   const handleAddTask = () => {
     if (!title || !dueDate) {
-      alert("Sloths need at least a title and date to remember! 🦥");
+      alert("A title and due date are required for accurate tracking.");
       return;
     }
 
@@ -72,7 +72,7 @@ function Task() {
 
   return (
     <div style={styles.container} className="no-scrollbar">
-      <TopBar title="Laziness Log" />
+      <TopBar title="Lazy Log" />
       
       <motion.div 
         initial={{ opacity: 0, y: 10 }}
@@ -189,7 +189,7 @@ function Task() {
                 animate={{ opacity: 1 }}
                 style={styles.emptyText}
               >
-                No tasks logged. Enjoy your sloth life.
+                No active commitments found.
               </motion.p>
             ) : (
               taskList.map((task, idx) => (

@@ -14,8 +14,8 @@ function Profile() {
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user")) || {};
     const prefs = JSON.parse(localStorage.getItem("prefs")) || {};
-    setName(user.name || "Lazy Archer");
-    setEmail(user.email || "sloth@planner.com");
+    setName(user.name || "Default User");
+    setEmail(user.email || "user@paceflow.com");
     setWakeTime(prefs.wakeTime || "08:00");
     setSleepTime(prefs.sleepTime || "23:00");
   }, []);
@@ -23,11 +23,11 @@ function Profile() {
   const handleSave = () => {
     localStorage.setItem("user", JSON.stringify({ name, email }));
     localStorage.setItem("prefs", JSON.stringify({ wakeTime, sleepTime }));
-    alert("Preferences saved! Your sloths are happy 🦥");
+    alert("Optimization preferences updated successfully.");
   };
 
   const handleLogout = () => {
-    if(window.confirm("Are you sure you want to log out? Your local sloth data will be cleared.")) {
+    if(window.confirm("Confirm logout? Your local session data will be cleared.")) {
       localStorage.clear();
       navigate("/");
     }

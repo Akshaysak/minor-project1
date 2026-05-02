@@ -3,7 +3,7 @@ import TopBar from "../components/TopBar";
 import { motion } from "motion/react";
 import { CheckCircle, Clock, Calendar, Lightbulb, Bell, Sparkles, Plus, RefreshCw } from "lucide-react";
 import confetti from "canvas-confetti";
-import { getSlothWisdom } from "../services/gemini";
+import { getDailyInsight } from "../services/gemini";
 
 function Home() {
   const [greeting, setGreeting] = useState("");
@@ -48,7 +48,7 @@ function Home() {
 
   const refreshTip = async () => {
     setLoadingTip(true);
-    const newTip = await getSlothWisdom();
+    const newTip = await getDailyInsight();
     setTip(newTip);
     setLoadingTip(false);
   };
@@ -159,7 +159,7 @@ function Home() {
 
   return (
     <div style={styles.container} className="no-scrollbar">
-      <TopBar title="Laziness Planner" />
+      <TopBar title="Lazy Planner" />
       <motion.div 
         variants={containerVariants}
         initial="hidden"
@@ -179,13 +179,13 @@ function Home() {
                 onClick={handleDayDone}
                 style={styles.doneBtn}
               >
-                Done
+                Mark Complete
               </motion.button>
             )}
             {dayDone && (
               <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} style={styles.doneBadge}>
                 <Sparkles size={16} style={{ marginRight: 4 }} />
-                Day Done
+                Optimum State
               </motion.div>
             )}
           </div>
@@ -224,10 +224,10 @@ function Home() {
 
         {dayDone && (
           <motion.div variants={itemVariants} style={styles.congratsCard}>
-            <div style={{ fontSize: '40px', marginBottom: '10px' }}>🥳</div>
-            <h3 style={{ margin: 0, color: '#fff', fontSize: '20px', fontWeight: '800' }}>Incredible Laziness!</h3>
+            <div style={{ fontSize: '40px', marginBottom: '10px' }}>🎯</div>
+            <h3 style={{ margin: 0, color: '#fff', fontSize: '20px', fontWeight: '800' }}>Peak Planning!</h3>
             <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '14px', margin: '5px 0 20px 0' }}>
-              You've successfully managed your day with zero stress. The Sloth colony is proud of you.
+              You've successfully managed your daily objectives with optimal pacing and intentional rest.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -235,7 +235,7 @@ function Home() {
               onClick={resetSession}
               style={styles.resetBtn}
             >
-              Plan a New Day
+              Plan Future Objectives
             </motion.button>
           </motion.div>
         )}
@@ -306,7 +306,7 @@ function Home() {
           )}
         </motion.div>
 
-        {/* Lazy Tip */}
+        {/* Daily Insight Section */}
         <motion.div variants={itemVariants} style={styles.cardTip}>
           <div style={{...styles.cardHeader, justifyContent: 'space-between'}}>
             <div style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
@@ -323,7 +323,7 @@ function Home() {
             </motion.button>
           </div>
           <p style={styles.tipText}>
-            {loadingTip ? "Consulting behavior patterns..." : `"${tip}"`}
+            {loadingTip ? "Synthesizing insights..." : `"${tip}"`}
           </p>
         </motion.div>
       </motion.div>

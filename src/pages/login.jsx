@@ -25,7 +25,7 @@ function Login() {
       >
         <h2 style={styles.heading}>Welcome Back</h2>
         <p style={styles.subtext}>
-          Time to check your relaxed schedule.
+          Sign in to access your optimized daily flow.
         </p>
 
         <div style={styles.inputWrapper}>
@@ -61,9 +61,9 @@ function Login() {
         </motion.button>
 
         <p style={styles.footer}>
-          New to the colony?{" "}
+          New to Pace?{" "}
           <span style={styles.link} onClick={() => navigate("/signup")}>
-            Join here
+            Create account
           </span>
         </p>
       </motion.div>
