@@ -1,7 +1,9 @@
 import { GoogleGenAI, Type } from "@google/genai";
 
 // Initialization with the official SDK and environment variable
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+// Support both AI Studio (process.env) and local Vite (import.meta.env)
+const apiKey = process.env.GEMINI_API_KEY || import.meta.env.VITE_GEMINI_API_KEY;
+const ai = new GoogleGenAI({ apiKey });
 
 export async function getSlothWisdom() {
   try {
